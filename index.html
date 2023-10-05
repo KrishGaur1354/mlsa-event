@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hand Detection</title>
+</head>
+<body>
+    <h1>Live Hand Detection</h1>
+    <img id="video_feed" src="{{ url_for('video_feed') }}" style="width: 100%; max-width: 640px;">
+
+    <script>
+        // JavaScript code to automatically update the image source
+        // This ensures the video feed is continuously displayed
+        const videoFeed = document.getElementById('video_feed');
+        setInterval(() => {
+            videoFeed.src = "{{ url_for('video_feed') }}";
+        }, 100);
+    </script>
+</body>
+</html>
